@@ -1,37 +1,42 @@
 <?php    
 
-header("Content-Type: application/json");
-
 require("vendor/autoload.php");
 
 use chillerlan\QRCode\QRCode;    
+
 use chillerlan\QRCode\QROptions;       
 
-if (isset($_POST["txt"])) {
-   
-    $txt = $_POST["txt"];
+class Gerando{      
 
-    $options = new QROptions([
-        'moduleValues' => [
-            'moduleWidth' => 5,  // Largura do módulo (tamanho dos quadrados do QR Code)
-            'moduleHeight' => 5, // Altura do módulo (tamanho dos quadrados do QR Code)
-        ],
-        'imageBase64' => true,  // Para gerar a imagem como Base64 (caso esteja retornando uma imagem base64)
-        'quietzoneSize' => 0,   // Aqui estamos configurando o padding (quietzone) para 0
-    ]);
+    function qr_code($txt){      
 
-    $obj = new QRCode($options);         
+        $options = new QROptions([
+            'moduleValues' => [
+                'moduleWidth' => 5,  // Largura do módulo (tamanho dos quadrados do QR Code)
+                'moduleHeight' => 5, // Altura do módulo (tamanho dos quadrados do QR Code)
+            ],
+            'outputType' => QRCode::OUTPUT_MARKUP_SVG,     
+            'imageBase64' => true,  // Para gerar a imagem como Base64 (caso esteja retornando uma imagem base64)
+            'quietzoneSize' => 0,   // Aqui estamos configurando o padding (quietzone) para 0
+        ]);          
     
-    if ($imagem = $obj->render($txt)) {
+        $obj = new QRCode($options);                  
+        
+        $caminho = "qr_codes/".md5(time()).".svg";
+        
+        if ($obj->render($txt,$caminho)){               
+    
+            return $caminho;         
+    
+        } else {      
+    
+            return "erro";        
+        }
 
-        echo json_encode($imagem);    
 
-    } else {      
+    }        
 
-        echo json_encode("erro");
-    }
-}
-   
+}    
 
 
 ?>  
