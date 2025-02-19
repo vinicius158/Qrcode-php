@@ -1,0 +1,86 @@
+body{
+
+background:#4169E1;    
+
+}         
+
+.content{
+
+display:flex;        
+align-items:center;        
+flex-direction:row;       
+justify-content:center;    
+
+}         
+
+.content .form{
+
+margin-top:100px;         
+text-align:center;   
+background:rgba(10, 0, 0, 0.788);;  
+height:auto;         
+padding:30px; 
+border:none;   
+border-radius:5px;   
+
+}
+
+
+.content .form form input[type="text"]{
+
+display:block;         
+margin-bottom:20px;    
+outline:none;          
+font-size:20px;     
+border:none;    
+border-radius:5px; 
+padding:5px;        
+
+}        
+
+.content .form form button{
+
+width:250px;     
+padding:5px;    
+font-size:18px;   
+border-radius:5px;       
+border:none;   
+color:white;        
+background:	#3CB371;   
+transition:0.5s;        
+align-items:center; 
+justify-content:center;     
+display:flex;     
+
+}        
+
+.content .form form button:hover{
+
+background:	#2E8B57;        
+
+}    
+
+svg{
+
+margin-left:10px;
+color:white;   
+
+}
+
+
+.content .form img{
+
+width:250px;   
+height:250px;   
+border:solid 1px white;
+
+}    
+
+.content .form form .message .alert{
+
+color:yellow;       
+
+
+}
+
+
