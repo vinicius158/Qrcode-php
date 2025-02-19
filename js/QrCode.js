@@ -1,4 +1,4 @@
-  $("#dados").submit(function(e){
+$("#dados").submit(function(e){
 
 e.preventDefault();       
 
