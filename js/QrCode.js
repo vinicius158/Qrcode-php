@@ -1,4 +1,4 @@
-$("#dados").submit(function(e){
+  $("#dados").submit(function(e){
 
 e.preventDefault();       
 
@@ -12,7 +12,7 @@ $(".message").html("<p class = 'alert'>O texto não foi inserido !!!!</p>");
 
 $.ajax({
 
-url:"http://localhost/PHP/Conversor_Qrcode/enviando.php",     
+url:"http://localhost/PHP/Conversor_Qrcode/processar.php",     
 method:"POST",   
 dataType:"json",     
 data:{txt:txt}
@@ -23,7 +23,9 @@ if(response != "erro"){
 
 $(".message").html("<p class = 'alert'>Gerado com sucesso !!!</p>");           
 
-let qr_code = "<img class = 'img' src = '"+response+"'>";
+let qr_code = "<img class = 'img' src = '"+response+"'>";       
+
+console.log(response);   
 
 $(".Qr_code").html(qr_code);   
 
