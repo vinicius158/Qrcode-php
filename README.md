@@ -1,7 +1,7 @@
 # Projeto      
 
 Sistema web que possui o objetivo de converter um texto fornecido pelo usuário em QrCode ao clicar no botão,
-logo após ele exibe o QrCode correspondente no formato svg para o usuário vizualizar.         
+logo posteriormente ele exibe o QrCode correspondente no formato svg para o usuário vizualizar.         
 
 # Tecnologias       
 
